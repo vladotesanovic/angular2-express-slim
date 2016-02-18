@@ -1,4 +1,4 @@
-## Angular2 Express slim starter
+## Angular2 Express slim starter ( Heroku ready )
 
 Demo: https://express-angular2-slim.herokuapp.com/
 
