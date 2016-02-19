@@ -23,6 +23,7 @@
     "zone.js": "0.5.14"
   },
   "devDependencies": {
+    "rimraf": "^2.5.2",
     "typescript": "^1.7.5",
     "typings": "^0.6.8"
   }
