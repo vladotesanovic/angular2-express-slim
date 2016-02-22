@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "build": "rimraf public/javascripts/app && tsc -w"
+    "build": "tsc -w",
+    "postinstall": "typings install && tsc"
   },
   "dependencies": {
     "angular2": "^2.0.0-beta.7",
