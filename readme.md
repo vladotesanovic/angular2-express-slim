@@ -1,8 +1,6 @@
 ## Angular2 Express slim starter ( Heroku ready )
 
-Demo: https://express-angular2-slim.herokuapp.com/
-
-- Angular 2 beta.6 ( https://angular.io/docs/ts/latest/quickstart.html )
+- Angular 2 beta.7 ( https://angular.io/docs/ts/latest/quickstart.html )
 - Express ( from generator )
 
 ## Install
