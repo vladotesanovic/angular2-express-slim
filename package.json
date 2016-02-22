@@ -22,11 +22,7 @@
     "serve-favicon": "~2.3.0",
     "systemjs": "^0.19.22",
     "typescript": "^1.8.0",
-    "zone.js": "^0.5.15"
-  },
-  "devDependencies": {
-    "rimraf": "^2.5.2",
-    "typescript": "^1.7.5",
+    "zone.js": "^0.5.15",
     "typings": "^0.6.8"
   }
 }
