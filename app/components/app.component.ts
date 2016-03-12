@@ -5,5 +5,5 @@ import {Component} from 'angular2/core';
     styleUrls: ['components/app.component.css']
 })
 export class AppComponent {
-    name: string = "Angular 2";
+    name: string = "Angular 2 on Express";
 }
