@@ -8,3 +8,4 @@ public/ng2
 *.iml
 *.ipr
 bower_components
+deps.js
