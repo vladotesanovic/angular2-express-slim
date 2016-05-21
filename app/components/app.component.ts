@@ -3,7 +3,7 @@ import { ApplicationConstants } from '../constants/ApplicationConstants';
 
 @Component({
     selector: 'my-app',
-    templateUrl: ApplicationConstants.BASE_TEMPLATE_PATH + 'components/app.component.html',
+    templateUrl:'app.component.html',
     styleUrls: [ApplicationConstants.BASE_TEMPLATE_PATH + 'components/app.component.css']
 })
 export class AppComponent {
