@@ -1,9 +1,10 @@
 import {Component} from '@angular/core';
+import { ApplicationConstants } from '../constants/ApplicationConstants';
 
 @Component({
     selector: 'my-app',
-    templateUrl: 'components/app.component.html',
-    styleUrls: ['components/app.component.css']
+    templateUrl: ApplicationConstants.BASE_TEMPLATE_PATH + 'components/app.component.html',
+    styleUrls: [ApplicationConstants.BASE_TEMPLATE_PATH + 'components/app.component.css']
 })
 export class AppComponent {
     name: string = "Angular 2 on Express";
