@@ -3,3 +3,4 @@ app/**/*.js
 typings
 npm-debug.log
 public/javascripts/ts
+*.bak
