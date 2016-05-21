@@ -11,7 +11,7 @@ var app = express();
 
 // expose node_modules to client app
 app.use(express.static("./node_modules/"));
-// app.use(express.static("./app/"));
+app.use(express.static("./app/"));
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
