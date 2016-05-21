@@ -7,6 +7,7 @@ var gulp = require('gulp'),
     mainBowerFiles = require('main-bower-files'),
     debug          = require('gulp-debug'),
     install        = require('gulp-install'),
+    concat         = require('gulp-concat'),
     embedTemplates = require('gulp-angular-embed-templates');
 
 gulp.task('default', function(pipe){
@@ -26,7 +27,10 @@ gulp.task('dependencies:build', function(){
     // TODO: I would like to add a flattening here for now ok
   return gulp.src(mainBowerFiles())
         // .pipe(debug())
-        .pipe(gulpCopy('public/deps'))
+        .pipe(sourcemaps.init())
+        .pipe(concat('deps.js'))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('public'))
 });
 
 gulp.task('js:build', function () {
