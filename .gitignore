@@ -4,3 +4,6 @@ typings
 npm-debug.log
 public/ng2
 *.bak
+.idea
+*.iml
+*.ipr
