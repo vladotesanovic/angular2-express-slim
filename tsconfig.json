@@ -11,6 +11,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "removeComments": false,
+    "outDir": "public/ng2",
     "noImplicitAny": false
   },
   "exclude": [

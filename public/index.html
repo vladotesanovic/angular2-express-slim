@@ -1,17 +1,18 @@
 <html>
   <head>
     <title>Angular 2 QuickStart</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stylesheets/style.css">
 
-    <!-- 1. Load libraries -->
-    <!-- IE required polyfills, in this exact order -->
-    <script src="es6-shim/es6-shim.min.js"></script>
-    <script src="systemjs/dist/system-polyfills.js"></script>
+    <!-- Polyfill(s) for older browsers -->
+    <script src="core-js/client/shim.min.js"></script>
 
-    <script src="angular2/bundles/angular2-polyfills.js"></script>
+    <script src="zone.js/dist/zone.js"></script>
+    <script src="reflect-metadata/Reflect.js"></script>
     <script src="systemjs/dist/system.src.js"></script>
 
-    <!-- 2. Configure SystemJS -->
+    <script src="javascripts/systemjs.config.js"></script>
     <script>
       System.config({
         defaultJSExtensions: true,
@@ -22,15 +23,13 @@
           }
         }
       });
-      System.import('main')
+      System.import('ng2/main')
             .then(null, console.error.bind(console));
     </script>
-
   </head>
 
   <!-- 3. Display the application -->
   <body>
     <my-app>Loading...</my-app>
   </body>
-
 </html>
