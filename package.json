@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "start": "concurrently \"tsc -w\" \"node ./bin/www\" ",
-    "postinstall": "typings install && tsc && npm run bundle:prod",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "typings": "typings install",
