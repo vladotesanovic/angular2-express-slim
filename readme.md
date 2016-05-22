@@ -4,6 +4,8 @@
 - Angular 2 rx.1 ( https://angular.io/docs/ts/latest/quickstart.html )
 - Express ( from generator )
 
+https://express-angular2-slim.herokuapp.com/
+
 ## Install
 ```bash
 git clone https://github.com/vladotesanovic/angular2-express-slim
