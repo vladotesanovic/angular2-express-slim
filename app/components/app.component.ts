@@ -1,11 +1,17 @@
-import {Component} from '@angular/core';
-import { ApplicationConstants } from '../constants/ApplicationConstants';
+import { Component } from '@angular/core';
+import { Http } from "@angular/http";
+import 'rxjs/add/operator/map';
 
 @Component({
     selector: 'my-app',
-    templateUrl: ApplicationConstants.BASE_TEMPLATE_PATH + 'components/app.component.html',
-    styleUrls: [ApplicationConstants.BASE_TEMPLATE_PATH + 'components/app.component.css']
+    templateUrl: 'components/app.component.html',
+    styleUrls: ['components/app.component.css']
 })
 export class AppComponent {
     name: string = "Angular 2 on Express";
+    users: {};
+
+    constructor(http: Http) {
+        this.users = http.get("/users").map(data => data.json());
+    }
 }

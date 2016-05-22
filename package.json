@@ -4,38 +4,42 @@
   "private": true,
   "scripts": {
     "start": "concurrently \"tsc -w\" \"node ./bin/www\" ",
-    "postinstall": "typings install && tsc"
+    "postinstall": "typings install && tsc && npm run bundle:prod",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "typings": "typings install",
+    "bundle": "node bin/bundler.js",
+    "bundle:prod": "node bin/bundler.js --prod"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
     "cookie-parser": "~1.3.5",
     "debug": "~2.2.0",
     "express": "~4.13.1",
-    "jade": "~1.11.0",
     "morgan": "~1.6.1",
     "serve-favicon": "~2.3.0",
     "stylus": "0.42.3",
-    "@angular/common":  "2.0.0-rc.1",
-    "@angular/compiler":  "2.0.0-rc.1",
-    "@angular/core":  "2.0.0-rc.1",
-    "@angular/http":  "2.0.0-rc.1",
-    "@angular/platform-browser":  "2.0.0-rc.1",
-    "@angular/platform-browser-dynamic":  "2.0.0-rc.1",
-    "@angular/router":  "2.0.0-rc.1",
-    "@angular/router-deprecated":  "2.0.0-rc.1",
-    "@angular/upgrade":  "2.0.0-rc.1",
-
+    "@angular/common": "2.0.0-rc.1",
+    "@angular/compiler": "2.0.0-rc.1",
+    "@angular/core": "2.0.0-rc.1",
+    "@angular/http": "2.0.0-rc.1",
+    "@angular/platform-browser": "2.0.0-rc.1",
+    "@angular/platform-browser-dynamic": "2.0.0-rc.1",
+    "@angular/router": "2.0.0-rc.1",
+    "@angular/router-deprecated": "2.0.0-rc.1",
+    "@angular/upgrade": "2.0.0-rc.1",
     "systemjs": "0.19.27",
     "core-js": "^2.4.0",
     "reflect-metadata": "^0.1.3",
     "rxjs": "5.0.0-beta.6",
     "zone.js": "^0.6.6",
-
-    "angular2-in-memory-web-api": "0.0.9",
-    "typings": "^0.6.8",
-    "typescript": "^1.8.0"
+    "angular2-in-memory-web-api": "0.0.9"
   },
   "devDependencies": {
-    "concurrently": "^2.0.0"
+    "concurrently": "^2.0.0",
+    "systemjs-builder": "^0.15.17",
+    "typescript": "^1.8.10",
+    "typings": "^0.8.1",
+    "yargs": "^4.7.1"
   }
 }

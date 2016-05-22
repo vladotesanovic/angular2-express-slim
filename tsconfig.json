@@ -1,17 +1,12 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "system",
-    "rootDir": "app",
-    "outDir": "app",
+    "module": "commonjs",
     "moduleResolution": "node",
-    "sourceMap": false,
-    "inlineSources": true,
-    "inlineSourceMap": true,
+    "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "removeComments": false,
-    "outDir": "public/ng2",
     "noImplicitAny": false
   },
   "exclude": [

@@ -3,7 +3,7 @@
     <title>Angular 2 QuickStart</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <!-- Polyfill(s) for older browsers -->
     <script src="core-js/client/shim.min.js"></script>
@@ -11,8 +11,11 @@
     <script src="zone.js/dist/zone.js"></script>
     <script src="reflect-metadata/Reflect.js"></script>
     <script src="systemjs/dist/system.src.js"></script>
+    <!--
 
-    <script src="javascripts/systemjs.config.js"></script>
+    Development mod
+
+    <script src="js/systemjs.config.js"></script>
     <script>
       System.config({
         defaultJSExtensions: true,
@@ -23,13 +26,17 @@
           }
         }
       });
-      System.import('ng2/main')
+      System.import('main')
             .then(null, console.error.bind(console));
     </script>
+    -->
   </head>
 
   <!-- 3. Display the application -->
   <body>
     <my-app>Loading...</my-app>
+
+    <!-- Production mod -->
+    <script src="js/bundle.min.js"></script>
   </body>
 </html>

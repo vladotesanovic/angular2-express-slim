@@ -1,4 +1,8 @@
-import {bootstrap}    from '@angular/platform-browser-dynamic';
-import {AppComponent} from './components/app.component'
+import { bootstrap }    from '@angular/platform-browser-dynamic';
+import { AppComponent } from './components/app.component'
+import { Type } from '@angular/core';
+import { HTTP_PROVIDERS } from "@angular/http";
 
-bootstrap(AppComponent);
+bootstrap(<Type>AppComponent, [
+    HTTP_PROVIDERS
+]);
