@@ -3,12 +3,12 @@ import { Http } from "@angular/http";
 import 'rxjs/add/operator/map';
 
 @Component({
-    selector: 'my-app',
-    templateUrl: 'components/app.component.html',
-    styleUrls: ['components/app.component.css']
+    selector: 'my-home',
+    templateUrl: 'components/home/home.component.html',
+    styleUrls: ['components/home/home.component.css']
 })
-export class AppComponent {
-    name: string = "Angular 2 on Express";
+export class HomeComponent {
+    name: string = "Home page";
     users: {};
 
     constructor(http: Http) {

@@ -38,7 +38,7 @@
     "concurrently": "^2.0.0",
     "systemjs-builder": "^0.15.17",
     "typescript": "^1.8.10",
-    "typings": "^0.8.1",
+    "typings": "^1.0.4",
     "yargs": "^4.7.1"
   }
 }

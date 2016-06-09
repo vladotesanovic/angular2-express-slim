@@ -12,20 +12,9 @@
     <script src="reflect-metadata/Reflect.js"></script>
     <script src="systemjs/dist/system.src.js"></script>
     <!--
-
     Development mod
-
     <script src="js/systemjs.config.js"></script>
     <script>
-      System.config({
-        defaultJSExtensions: true,
-        packages: {        
-          app: {
-            format: 'register',
-            defaultExtension: 'js'
-          }
-        }
-      });
       System.import('main')
             .then(null, console.error.bind(console));
     </script>
