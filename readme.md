@@ -12,7 +12,7 @@ git clone https://github.com/vladotesanovic/angular2-express-slim
 cd angular2-express-slim
 
 # Install dependencies
-npm install
+npm install && npm run typings
 
 # run and watch for changes in .ts files
 npm start
@@ -26,15 +26,6 @@ Uncomment in public/index.html:
 ```html
 <script src="js/systemjs.config.js"></script>
 <script>
-  System.config({
-    defaultJSExtensions: true,
-    packages: {
-      app: {
-        format: 'register',
-        defaultExtension: 'js'
-      }
-    }
-  });
   System.import('main')
         .then(null, console.error.bind(console));
 </script>
