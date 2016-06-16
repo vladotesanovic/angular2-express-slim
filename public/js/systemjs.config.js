@@ -5,7 +5,6 @@ var isPublic = typeof window != "undefined";
  * Adjust as necessary for your application needs.
  */
 (function(global) {
-
   // map tells the System loader where to look for things
   var map = {
     'app':                        'app', // 'dist',
@@ -17,7 +16,7 @@ var isPublic = typeof window != "undefined";
   var packages = {
     'app':                        { main: 'main.js',  defaultExtension: 'js' },
     'rxjs':                       { defaultExtension: 'js' },
-    'angular2-in-memory-web-api': { defaultExtension: 'js' }
+    'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' },
   };
   var ngPackageNames = [
     'common',
@@ -30,10 +29,18 @@ var isPublic = typeof window != "undefined";
     'router-deprecated',
     'upgrade'
   ];
+  // Individual files (~300 requests):
+  function packIndex(pkgName) {
+    packages['@angular/'+pkgName] = { main: 'index.js', defaultExtension: 'js' };
+  }
+  // Bundled (~40 requests):
+  function packUmd(pkgName) {
+    packages['@angular/'+pkgName] = { main: '/bundles/' + pkgName + '.umd.js', defaultExtension: 'js' };
+  }
+  // Most environments should use UMD; some (Karma) need the individual index files
+  var setPackageConfig = System.packageWithIndex ? packIndex : packUmd;
   // Add package entries for angular packages
-  ngPackageNames.forEach(function(pkgName) {
-    packages['@angular/'+pkgName] = { main: pkgName + '.umd.js', defaultExtension: 'js' };
-  });
+  ngPackageNames.forEach(setPackageConfig);
   var config = {
     map: map,
     packages: packages
