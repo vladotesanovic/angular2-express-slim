@@ -7,7 +7,7 @@ var isPublic = typeof window != "undefined";
 (function(global) {
   // map tells the System loader where to look for things
   var map = {
-    'app':                        'app', // 'dist',
+    'app':                        (isPublic)? '' : 'app', // 'dist',
     '@angular':                   (isPublic)? '@angular' : 'node_modules/@angular',
     '@angular/router':            (isPublic)? '@angular/router' : 'node_modules/@angular/router',
     'angular2-in-memory-web-api': (isPublic)? 'angular2-in-memory-web-api' : 'node_modules/angular2-in-memory-web-api',
@@ -42,11 +42,15 @@ var isPublic = typeof window != "undefined";
 
   // Most environments should use UMD; some (Karma) need the individual index files
   var setPackageConfig = System.packageWithIndex ? packIndex : packUmd;
+
   // Add package entries for angular packages
   ngPackageNames.forEach(setPackageConfig);
+
   var config = {
     map: map,
     packages: packages
   };
+
   System.config(config);
+
 })(this);

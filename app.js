@@ -9,6 +9,12 @@ var users = require('./routes/users');
 
 var app = express();
 
+if (app.get('env') !== 'production') {
+
+  // expose node_modules to client app
+  app.use(express.static(__dirname + "/node_modules"));
+}
+
 // uncomment after placing your favicon in /public
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -32,6 +38,7 @@ app.use(function(req, res, next) {
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
+
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.json({
