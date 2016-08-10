@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Http } from "@angular/http";
-import 'rxjs/add/operator/map';
+import './rxjs-operators';
 
 @Component({
     selector: 'my-home',
