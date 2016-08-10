@@ -9,7 +9,6 @@ var isPublic = typeof window != "undefined";
   var map = {
     'app':                        (isPublic)? '' : 'app', // 'dist',
     '@angular':                   (isPublic)? '@angular' : 'node_modules/@angular',
-    '@angular/router':            (isPublic)? '@angular/router' : 'node_modules/@angular/router',
     'angular2-in-memory-web-api': (isPublic)? 'angular2-in-memory-web-api' : 'node_modules/angular2-in-memory-web-api',
     'rxjs':                       (isPublic)? 'rxjs' : 'node_modules/rxjs'
   };
@@ -23,9 +22,11 @@ var isPublic = typeof window != "undefined";
     'common',
     'compiler',
     'core',
+    'forms',
     'http',
     'platform-browser',
     'platform-browser-dynamic',
+    'router',
     'router-deprecated',
     'upgrade'
   ];
@@ -37,20 +38,14 @@ var isPublic = typeof window != "undefined";
   function packUmd(pkgName) {
     packages['@angular/'+pkgName] = { main: '/bundles/' + pkgName + '.umd.js', defaultExtension: 'js' };
   }
-
-  packages['@angular/router'] = { main: 'index.js', defaultExtension: 'js' };
-
   // Most environments should use UMD; some (Karma) need the individual index files
   var setPackageConfig = System.packageWithIndex ? packIndex : packUmd;
-
   // Add package entries for angular packages
   ngPackageNames.forEach(setPackageConfig);
-
   var config = {
     map: map,
     packages: packages
   };
-
   System.config(config);
-
 })(this);
+

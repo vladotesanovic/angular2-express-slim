@@ -3,7 +3,6 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
     directives: [ROUTER_DIRECTIVES],
-    providers: [Location],
     selector: 'my-app',
     styles: [`h1 {
 	color: white;

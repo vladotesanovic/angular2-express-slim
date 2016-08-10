@@ -9,6 +9,10 @@
     "removeComments": false,
     "noImplicitAny": false
   },
+  "angularCompilerOptions": {
+    "genDir": ".",
+    "debug": true
+  },
   "exclude": [
     "node_modules"
   ]
