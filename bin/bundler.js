@@ -7,7 +7,7 @@ builder.loadConfig('./public/js/systemjs.config.js')
         var outputFile = argv.prod ? './public/js/bundle.min.js' : './public/js/bundle.js';
         return builder.buildStatic('app', outputFile, {
             minify: argv.prod,
-            mangle: argv.prod,
+            mangle: false,
             rollup: argv.prod
         });
     })

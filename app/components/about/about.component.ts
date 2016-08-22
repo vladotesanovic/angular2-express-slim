@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
 @Component({
     selector: 'my-about',
     templateUrl: 'components/about/about.component.html',
@@ -6,6 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AboutComponent {
     name: string = "About Us";
+    param: string;
 
-    constructor() {}
+    constructor(private params: ActivatedRoute) {
+        params.params
+            .subscribe((data: { id?: string}) => this.param = data.id);
+    }
 }
