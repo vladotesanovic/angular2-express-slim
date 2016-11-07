@@ -1,30 +1,36 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+const express = require('express');
+const path = require('path');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const compression = require('compression');
 
 var users = require('./routes/users');
-
 var app = express();
 
+const options = {
+  index: "index.html"
+};
+
 if (app.get('env') !== 'production') {
+
+  options.index = "index.dev.html";
 
   // expose node_modules to client app
   app.use(express.static(__dirname + "/node_modules"));
 }
 
-// uncomment after placing your favicon in /public
-// app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
+app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'), options));
 app.use(express.static(path.join(__dirname, 'app')));
 
+// Routes registration
+// ---
 app.use('/users', users);
 
 // catch 404 and forward to error handler

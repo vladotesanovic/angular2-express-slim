@@ -1,10 +1,12 @@
 ## Angular2 Express slim starter
 ### Heroku ready wih SystemJS builder
 
-- Angular 2 RC.5 ( https://angular.io/docs/ts/latest/quickstart.html )
+- Angular 2 ( https://angular.io/docs/ts/latest/quickstart.html )
 - Express ( from generator )
 
 https://express-angular2-slim.herokuapp.com/
+
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
 ## Install
 ```bash
@@ -12,7 +14,7 @@ git clone https://github.com/vladotesanovic/angular2-express-slim
 cd angular2-express-slim
 
 # Install dependencies
-npm install && npm run typings
+npm install
 
 # run and watch for changes in .ts files
 npm start
@@ -20,19 +22,13 @@ npm start
 # Applciation url: http://localhost:3000
 ```
 
-## Development
-Uncomment in public/index.html:
+## Run in production mod
+```bash
+npm run build:prod
 
-```html
-<script src="js/systemjs.config.js"></script>
-<script>
-  System.import('main')
-        .then(null, console.error.bind(console));
-</script>
+npm run prod
 ```
 
-Comment out
-```html
-<!-- Production mod -->
-<script src="js/bundle.min.js"></script>
-```
+## If you are looking for Webpack version
+
+https://github.com/vladotesanovic/angular2-express-starter
